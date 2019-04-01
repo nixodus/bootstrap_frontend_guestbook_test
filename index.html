@@ -1,0 +1,152 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Guestbook test</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">Guestbook test</a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+            &#9776;
+        </button>
+        <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+            <ul class="nav navbar-nav">
+
+            </ul>
+            <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i
+                        class="fa fa-cog fa-fw fa-lg"></i></a></li>
+                <li class="dropdown order-1" id="loginSection">
+                    <button type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right mt-2">
+                        <li class="px-3 py-2">
+                            <form id="login-form" class="form" role="form">
+                                <div class="form-group">
+                                    <input id="loginInput" placeholder="Username" class="form-control form-control-sm"
+                                           type="text" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="passwordInput" placeholder="Password"
+                                           class="form-control form-control-sm" type="password" required="">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown order-2" id="addPostSection" style="display: none;">
+
+                    <button id="addPostButton" type="button" class="btn btn-primary mr-sm-2" data-toggle="modal"
+                            data-target="#postModal">
+                        Add Post
+                    </button>
+                </li>
+                <li class="dropdown order-3" id="logoutSection" style="display: none">
+                    <button type="button" id="logoutButton"
+                            class="btn btn-outline-secondary">Logout <span class="caret"></span></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <div style="display: none;" class="alert alert-danger" role="alert" id="loginError">
+
+        </div>
+        <div style="display: none;" class="alert alert-success" role="alert" id="loginOk">
+
+        </div>
+
+        <div id="postList">
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="jumbotron">
+
+
+                    <div class="container">
+
+                        <div style="display: none;" class="alert alert-danger" role="alert" id="fileError">
+
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="Title">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="body">Message</label>
+                                <textarea class="form-control" id="body" rows="5"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="file_input">Image (JPG/PNG - max 2 MB)</label>
+                                <input type="file" class="form-control-file" id="file_input">
+                                <img style="max-width: 300px;" id="img_preview" src="#" alt="your image"/>
+                            </div>
+                            <button type="button" id="add_post" onclick="postGuestbookPost();" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/guestbookposts.js"></script>
+
+</body>
+</html>
+
+
