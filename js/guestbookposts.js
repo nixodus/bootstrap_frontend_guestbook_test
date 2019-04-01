@@ -1,8 +1,8 @@
+var apiURL = 'http://localhost:8000';
 
 var fileToUpload = '';
 var accessToken = '';
 
-var apiURL = 'http://localhost:8000';
 
 $(document).ready(function () {
 
