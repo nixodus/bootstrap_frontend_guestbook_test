@@ -19,9 +19,7 @@ $(document).ready(function () {
         loginAction();
     });
 
-
     getGuestbookPosts();
-
 
 });
 
@@ -30,14 +28,10 @@ function loginAction() {
     var login = $('#loginInput').val();
     var password  = $('#passwordInput').val();
 
-
-
     var data = '{'
         + '"grant-type" : "' + 'password' + '",'
         + '"redirect-uri" : "' + apiURL + '"';
     data += '}';
-
-
 
 
     if(login && password){
@@ -84,7 +78,6 @@ function loginAction() {
                         $("#loginError").fadeTo(2000, 500).slideUp(500, function(){
                             $("#loginError").slideUp(5000);
                         });
-
 
                     }
                 });
@@ -211,7 +204,6 @@ function postGuestbookPost() {
 }
 
 
-
 function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -245,8 +237,6 @@ function readURL(input) {
             return;
 
         }
-
-
     }
 }
 
