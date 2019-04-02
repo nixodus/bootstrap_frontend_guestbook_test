@@ -114,12 +114,15 @@ function getGuestbookPosts() {
 
             var cell = '';
 
+            console.log(responseData);
+
             $.each(responseData, function (k, item) {
 
                 cell += '<div class="col-md-10 blogShort">';
                 cell += '<h3>'+item.title+'</h3>';
+                cell += '<p><small style="float: right; margin-top: -20px;">'+item.date_added.substring(0,10)+'</small></p>';
                 if(item.image){
-                    cell += '<img style="float: left; margin-right: 5px;" src="'+apiURL+item.image+'";';
+                    cell += '<img style="float: left; margin-right: 5px; max-width: 300px;" src="'+apiURL+item.image+'";';
                     cell += 'class="pull-left img-responsive thumb margin10 img-thumbnail">';
                 }
                 cell += '<article>'+item.body+'</article>';
