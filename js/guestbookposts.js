@@ -85,6 +85,7 @@ function loginAction() {
             },
             error: function (responseData, textStatus, errorThrown) {
 
+                $("#loginError").html('<strong>Error!</strong> Login or password not correct.');
                 $("#loginError").fadeTo(2000, 500).slideUp(500, function(){
                     $("#loginError").slideUp(5000);
                 });
