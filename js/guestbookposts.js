@@ -114,7 +114,6 @@ function getGuestbookPosts() {
 
             var cell = '';
 
-            console.log(responseData);
 
             $.each(responseData, function (k, item) {
 
